@@ -1,0 +1,8 @@
+*.pyc
+__pycache__
+
+*/bin/*
+*/lib/*
+pyvenv.cfg
+*/.DS_Store
+.DS_Store
