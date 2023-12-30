@@ -125,8 +125,12 @@
                         value="{{restaurant.restaurant_keyword}}">
                 </div>
                 <a href="/" class="resAddBtn btn btn-info" role="button">홈으로</a>
-                <a href="./updatePage/{{restaurant.id}}" class="resAddBtn btn btn-danger" style="margin-right: 10px;"
+                <a href="./updatePage/{{restaurant.id}}" class="resAddBtn btn btn-warning" style="margin-right: 10px;"
                     role="button">수정하기</a>
+                <form action="./delete" method="POST">{% csrf_token %}
+                    <input type="hidden" name="resId" id="resId" value="{{ restaurant.id }}">
+                    <input type="submit" class="resAddBtn btn btn-danger" style="margin-right: 10px;" value="삭제하기">
+                </form>
             </div>
         </div>
         <div class="panel-footer">
