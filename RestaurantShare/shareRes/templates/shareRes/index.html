@@ -249,21 +249,23 @@
                             {% for category in categories %}
                             <li class="category deactive">{{ category.category_name }}</li>
                             <ul class="restaurantList">
-
+                                {% for restaurant in restaurants %}
+                                {% if restaurant.category == category %}
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <input name="check1" id="check1" type="checkbox">
+                                        <input name="checks" id="check{{restaurant.id}}" type="checkbox"
+                                            value="{{restaurant.id}}">
                                     </span>
-                                    <a href="restaurantDetail/1"><input name="res1" id="res1" type="text"
-                                            class="form-control" disabled style="cursor:pointer;" value="1"></a>
+                                    <a href="restaurantDetail/{{restaurant.id}}" target="_blank"
+                                        onclick="return false;">
+                                        <input name="res{{restaurant.id}}" id="res{{restaurant.id}}" type="text"
+                                            class="form-control" readonly style="cursor:pointer;"
+                                            value="{{restaurant.restaurant_name}}"
+                                            onclick="redirectToRestaurantDetail('{{restaurant.id}}')">
+                                    </a>
                                 </div>
-
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input name="check2" id="check2" type="checkbox">
-                                    </span>
-                                    <a href="restaurantDetail/2"><input name="res2" id="res2" type="text"
-                                            class="form-control" disabled style="cursor:pointer;" value="2"></a>
+                                {% endif %}
+                                {% endfor %}
                             </ul>
                             {% endfor %}
                         </ul>
@@ -300,9 +302,14 @@
             </div>
         </div>
         <div class="panel-footer">
-            실전예제로 배우는 Django. Project2-RestaurantShare
+            실전 예제로 배우는 Django. Project2-RestaurantShare
         </div>
     </div>
+    <script>
+        function redirectToRestaurantDetail(restaurantId) {
+            window.location.href = "restaurantDetail/" + restaurantId;
+        }
+    </script>
 </body>
 
 </html>
