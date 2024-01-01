@@ -1,5 +1,6 @@
 # RestaurantsShare_with_Django
 장고를 활용한 맛집 공유 사이트 제작 (백엔드 학습)
+- 2023/12/29(금) ~ 2024/01/01(월) 학습 완료
 
 ## Development Environment
 - Apple Mac M1
