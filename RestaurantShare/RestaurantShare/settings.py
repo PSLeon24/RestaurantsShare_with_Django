@@ -25,8 +25,15 @@ SECRET_KEY = "django-insecure-=l9e(_ogt*4t#h%&^ki#&r@u31wx8gz#=u#gg476@f30@1k3)z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["PSLeon.pythonanywhere.com", "127.0.0.1", "localhost"]
 
+# Email settings
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = "587"
+EMAIL_HOST_USER = "psleon8245@gmail.com"
+EMAIL_HOST_PASSWORD = "password"  # 내 구글 계정의 앱 비밀번호 쓰기
 
 # Application definition
 
